@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package com.zsy.common.utils;
+package com.atguigu.common.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;

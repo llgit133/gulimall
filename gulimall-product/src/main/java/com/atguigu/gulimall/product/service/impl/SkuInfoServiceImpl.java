@@ -1,5 +1,8 @@
-package com.atguigu.gulimall.product.service.impl..service.impl;
+package com.atguigu.gulimall.product.service.impl;
 
+import com.atguigu.gulimall.product.dao.SkuInfoDao;
+import com.atguigu.gulimall.product.entity.SkuInfoEntity;
+import com.atguigu.gulimall.product.service.SkuInfoService;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -8,9 +11,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.Query;
 
-import com.atguigu.gulimall..dao.SkuInfoDao;
-import com.atguigu.gulimall..entity.SkuInfoEntity;
-import com.atguigu.gulimall..service.SkuInfoService;
 
 
 @Service("skuInfoService")

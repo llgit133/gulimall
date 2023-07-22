@@ -1,9 +1,10 @@
-package com.atguigu.gulimall.product.controller..controller;
+package com.atguigu.gulimall.product.controller;
 
 import java.util.Arrays;
 import java.util.Map;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.atguigu.gulimall.product.entity.SpuCommentEntity;
+import com.atguigu.gulimall.product.service.SpuCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.atguigu.gulimall..entity.SpuCommentEntity;
-import com.atguigu.gulimall..service.SpuCommentService;
+
 import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.R;
 
@@ -35,7 +35,6 @@ public class SpuCommentController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions(":spucomment:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuCommentService.queryPage(params);
 
@@ -47,7 +46,6 @@ public class SpuCommentController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions(":spucomment:info")
     public R info(@PathVariable("id") Long id){
 		SpuCommentEntity spuComment = spuCommentService.getById(id);
 
@@ -58,7 +56,6 @@ public class SpuCommentController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions(":spucomment:save")
     public R save(@RequestBody SpuCommentEntity spuComment){
 		spuCommentService.save(spuComment);
 
@@ -69,7 +66,6 @@ public class SpuCommentController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions(":spucomment:update")
     public R update(@RequestBody SpuCommentEntity spuComment){
 		spuCommentService.updateById(spuComment);
 
@@ -80,7 +76,6 @@ public class SpuCommentController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions(":spucomment:delete")
     public R delete(@RequestBody Long[] ids){
 		spuCommentService.removeByIds(Arrays.asList(ids));
 
